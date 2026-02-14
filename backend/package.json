@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "lint": "oxlint src/",
+    "lint:fix": "oxlint --fix src/",
+    "format": "oxfmt src/",
+    "format:check": "oxfmt --check src/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:fix": "tsc --noEmit && oxlint --fix src/ && oxfmt src/",
+    "make-admin": "tsx scripts/make-admin.ts",
+    "make-admin:prod": "DOTENV_CONFIG_PATH=.env.prod tsx scripts/make-admin.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@libsql/client": "^0.17.0",
+    "better-auth": "^1.4.18",
+    "dotenv": "^17.2.4",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.11.7",
+    "zod": "^4.3.6"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "drizzle-kit": "^0.31.8",
+    "oxfmt": "^0.28.0",
+    "oxlint": "^1.43.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3",
+    "vitest": "^4.0.18"
+  }
+}

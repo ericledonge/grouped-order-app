@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+
+# Environment
+.env
+.env.local
+.env.prod
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+
+# Drizzle (backend)
+drizzle/
+
+# Playwright (frontend)
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# TanStack Router (frontend)
+.output
+.vinxi
+.nitro
+.wrangler
