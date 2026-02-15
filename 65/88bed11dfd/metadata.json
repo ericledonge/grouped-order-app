@@ -1,0 +1,60 @@
+{
+  "cli_version": "0.4.4",
+  "checkpoint_id": "6588bed11dfd",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "backend/src/app.ts",
+    "backend/src/application/schemas/wish.schema.ts",
+    "backend/src/application/use-cases/user/list-users.use-case.ts",
+    "backend/src/domain/ports/user.repository.port.ts",
+    "backend/src/infrastructure/http/routes/user.routes.ts",
+    "backend/src/infrastructure/http/routes/wish.routes.ts",
+    "backend/src/infrastructure/repositories/drizzle-user.repository.ts",
+    "backend/tests/integration/users.test.ts",
+    "backend/tests/integration/wishes.test.ts",
+    "frontend/src/components/layout/nav.tsx",
+    "frontend/src/features/orders/domain/order.adapter.ts",
+    "frontend/src/features/orders/domain/order.repository.ts",
+    "frontend/src/features/orders/use-cases/list-open-orders/list-open-orders-page.tsx",
+    "frontend/src/features/orders/use-cases/list-open-orders/use-list-open-orders.use-case.ts",
+    "frontend/src/features/orders/use-cases/order-detail/order-detail-page.tsx",
+    "frontend/src/features/orders/use-cases/order-detail/use-order-detail.use-case.ts",
+    "frontend/src/features/users/domain/user.adapter.ts",
+    "frontend/src/features/users/domain/user.repository.ts",
+    "frontend/src/features/users/domain/user.types.ts",
+    "frontend/src/features/wishes/domain/wish.adapter.ts",
+    "frontend/src/features/wishes/domain/wish.repository.ts",
+    "frontend/src/features/wishes/domain/wish.types.ts",
+    "frontend/src/features/wishes/use-cases/create-wish/create-wish-form.tsx",
+    "frontend/src/features/wishes/use-cases/create-wish/create-wish.service.test.ts",
+    "frontend/src/features/wishes/use-cases/create-wish/create-wish.service.ts",
+    "frontend/src/features/wishes/use-cases/create-wish/use-create-wish.use-case.ts",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/list-my-wishes-page.tsx",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/list-my-wishes.helpers.ts",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/use-list-my-wishes.use-case.ts",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/wish-card-list.tsx",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/wish-list-content.tsx",
+    "frontend/src/features/wishes/use-cases/list-my-wishes/wish-table.tsx",
+    "frontend/src/routes/_auth/orders.tsx",
+    "frontend/src/routes/_auth/orders_.$orderId.tsx",
+    "frontend/src/routes/_auth/wishes.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/65/88bed11dfd/0/metadata.json",
+      "transcript": "/65/88bed11dfd/0/full.jsonl",
+      "context": "/65/88bed11dfd/0/context.md",
+      "content_hash": "/65/88bed11dfd/0/content_hash.txt",
+      "prompt": "/65/88bed11dfd/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 36,
+    "cache_creation_tokens": 144115,
+    "cache_read_tokens": 1976273,
+    "output_tokens": 186,
+    "api_call_count": 30
+  }
+}
