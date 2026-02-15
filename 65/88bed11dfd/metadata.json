@@ -3,7 +3,7 @@
   "checkpoint_id": "6588bed11dfd",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 1,
+  "checkpoints_count": 2,
   "files_touched": [
     "backend/src/app.ts",
     "backend/src/application/schemas/wish.schema.ts",
@@ -19,6 +19,10 @@
     "frontend/src/features/orders/domain/order.repository.ts",
     "frontend/src/features/orders/use-cases/list-open-orders/list-open-orders-page.tsx",
     "frontend/src/features/orders/use-cases/list-open-orders/use-list-open-orders.use-case.ts",
+    "frontend/src/features/orders/use-cases/list-orders/list-orders-page.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/order-card-list.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/order-table.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/use-list-orders.use-case.ts",
     "frontend/src/features/orders/use-cases/order-detail/order-detail-page.tsx",
     "frontend/src/features/orders/use-cases/order-detail/use-order-detail.use-case.ts",
     "frontend/src/features/users/domain/user.adapter.ts",
@@ -37,6 +41,7 @@
     "frontend/src/features/wishes/use-cases/list-my-wishes/wish-card-list.tsx",
     "frontend/src/features/wishes/use-cases/list-my-wishes/wish-list-content.tsx",
     "frontend/src/features/wishes/use-cases/list-my-wishes/wish-table.tsx",
+    "frontend/src/routes/_auth/admin/orders.tsx",
     "frontend/src/routes/_auth/orders.tsx",
     "frontend/src/routes/_auth/orders_.$orderId.tsx",
     "frontend/src/routes/_auth/wishes.tsx"
@@ -48,13 +53,20 @@
       "context": "/65/88bed11dfd/0/context.md",
       "content_hash": "/65/88bed11dfd/0/content_hash.txt",
       "prompt": "/65/88bed11dfd/0/prompt.txt"
+    },
+    {
+      "metadata": "/65/88bed11dfd/1/metadata.json",
+      "transcript": "/65/88bed11dfd/1/full.jsonl",
+      "context": "/65/88bed11dfd/1/context.md",
+      "content_hash": "/65/88bed11dfd/1/content_hash.txt",
+      "prompt": "/65/88bed11dfd/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 36,
-    "cache_creation_tokens": 144115,
-    "cache_read_tokens": 1976273,
-    "output_tokens": 186,
-    "api_call_count": 30
+    "input_tokens": 91,
+    "cache_creation_tokens": 209829,
+    "cache_read_tokens": 4640049,
+    "output_tokens": 591,
+    "api_call_count": 73
   }
 }

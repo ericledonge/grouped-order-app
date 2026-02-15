@@ -1,0 +1,42 @@
+{
+  "cli_version": "0.4.4",
+  "checkpoint_id": "6588bed11dfd",
+  "session_id": "a6a97961-0c7a-4767-8982-65b56079f09f",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-15T20:54:17.721434Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "backend/src/application/use-cases/user/list-users.use-case.ts",
+    "backend/src/domain/ports/user.repository.port.ts",
+    "backend/src/infrastructure/http/routes/user.routes.ts",
+    "backend/src/infrastructure/repositories/drizzle-user.repository.ts",
+    "backend/tests/integration/users.test.ts",
+    "frontend/src/components/layout/nav.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/list-orders-page.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/order-card-list.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/order-table.tsx",
+    "frontend/src/features/orders/use-cases/list-orders/use-list-orders.use-case.ts",
+    "frontend/src/routes/_auth/admin/orders.tsx",
+    "frontend/src/routes/_auth/orders.tsx"
+  ],
+  "agent": "Claude Code",
+  "transcript_identifier_at_start": "9ce96507-681c-4418-8fdf-587111053469",
+  "token_usage": {
+    "input_tokens": 55,
+    "cache_creation_tokens": 65714,
+    "cache_read_tokens": 2663776,
+    "output_tokens": 405,
+    "api_call_count": 43
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-15T20:54:17.609288Z",
+    "agent_lines": 165,
+    "human_added": 1941,
+    "human_modified": 2,
+    "human_removed": 0,
+    "total_committed": 2108,
+    "agent_percentage": 7.827324478178369
+  },
+  "transcript_path": ".claude/projects/-Users-ericledonge-Perso-grouped-order-app/a6a97961-0c7a-4767-8982-65b56079f09f.jsonl"
+}
