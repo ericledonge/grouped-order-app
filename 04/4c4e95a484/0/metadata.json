@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.4.4",
+  "checkpoint_id": "044c4e95a484",
+  "session_id": "7876b651-9c85-4dc2-b829-9f5c7f81346b",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-15T23:37:56.904901Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "frontend/src/components/layout/header.tsx"
+  ],
+  "agent": "Claude Code",
+  "token_usage": {
+    "input_tokens": 12,
+    "cache_creation_tokens": 22324,
+    "cache_read_tokens": 320965,
+    "output_tokens": 65,
+    "api_call_count": 10
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-15T23:37:56.881218Z",
+    "agent_lines": 1,
+    "human_added": 273,
+    "human_modified": 1,
+    "human_removed": 0,
+    "total_committed": 275,
+    "agent_percentage": 0.36363636363636365
+  },
+  "transcript_path": ".claude/projects/-Users-ericledonge-Perso-grouped-order-app/7876b651-9c85-4dc2-b829-9f5c7f81346b.jsonl"
+}

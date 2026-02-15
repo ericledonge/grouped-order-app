@@ -1,0 +1,8 @@
+# Session Context
+
+## User Prompts
+
+### Prompt 1
+
+À côté du nom et prénom joueur, dans le header, à côté du bouton des connexions, est-ce que tu pourrais ajouter entre parenthèses s'il s'agit d'un membre ou d'un admin ?
+
