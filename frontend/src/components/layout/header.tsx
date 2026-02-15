@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/sheet'
 
 export function Header() {
-  const { user, isAuthenticated } = useAuthSession()
+  const { user, isAuthenticated, isAdmin } = useAuthSession()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
@@ -37,7 +37,7 @@ export function Header() {
           {isAuthenticated ? (
             <>
               <span className="text-sm text-muted-foreground hidden md:inline">
-                {user?.name}
+                {user?.name} ({isAdmin ? 'Admin' : 'Membre'})
               </span>
               <Button
                 variant="outline"

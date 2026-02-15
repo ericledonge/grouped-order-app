@@ -36,8 +36,8 @@ test.describe('Admin - Orders', () => {
     // Submit
     await page.getByRole('button', { name: 'Créer la commande' }).click()
 
-    // Should redirect to orders list
-    await expect(page).toHaveURL('/admin/orders')
+    // Should redirect to orders list (admin/orders redirects to /orders)
+    await expect(page).toHaveURL('/orders')
 
     // Verify the order appears (use table cell to avoid card+table duplicate matches)
     await expect(page.getByRole('cell', { name: 'Mensuelle' })).toBeVisible()

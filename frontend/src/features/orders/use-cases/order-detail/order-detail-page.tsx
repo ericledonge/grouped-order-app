@@ -3,10 +3,12 @@ import { ArrowLeft, LoaderCircle } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
 import { ORDER_TYPE_LABELS, ORDER_STATUS_LABELS } from '@/features/orders/domain/order.types'
-import { WISH_STATUS_LABELS } from '@/features/wishes/domain/wish.types'
+import { WishCardList } from '@/features/wishes/use-cases/list-my-wishes/wish-card-list'
+import { WishTable } from '@/features/wishes/use-cases/list-my-wishes/wish-table'
+import { CreateWishFormContent } from '@/features/wishes/use-cases/create-wish/create-wish-form-content'
 import { formatDate } from '@/lib/date.utils'
-import { CreateWishForm } from '@/features/wishes/use-cases/create-wish/create-wish-form'
 import { useOrderDetail } from './use-order-detail.use-case'
 
 export function OrderDetailPage({ orderId }: { orderId: string }) {
@@ -25,6 +27,8 @@ export function OrderDetailPage({ orderId }: { orderId: string }) {
       </div>
     )
   }
+
+  const isOpen = order.status === 'open'
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto">
@@ -48,28 +52,31 @@ export function OrderDetailPage({ orderId }: { orderId: string }) {
         </CardContent>
       </Card>
 
-      {wishes.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Souhaits ({wishes.length})</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="divide-y">
-              {wishes.map((w) => (
-                <li key={w.id} className="py-2 flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">{w.gameName}</p>
-                    <p className="text-sm text-muted-foreground">{w.philibertReference}</p>
-                  </div>
-                  <Badge variant="secondary">{WISH_STATUS_LABELS[w.status]}</Badge>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      )}
-
-      {order.status === 'open' && <CreateWishForm orderId={orderId} />}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">
+            Souhaits{wishes.length > 0 && ` (${wishes.length})`}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {wishes.length > 0 && (
+            <>
+              <WishCardList wishes={wishes} />
+              <WishTable wishes={wishes} />
+            </>
+          )}
+          {wishes.length === 0 && !isOpen && (
+            <p className="text-muted-foreground">Aucun souhait pour le moment.</p>
+          )}
+          {isOpen && (
+            <>
+              {wishes.length > 0 && <Separator className="my-6" />}
+              <h3 className="text-base font-semibold mb-4">Ajouter un souhait</h3>
+              <CreateWishFormContent orderId={orderId} />
+            </>
+          )}
+        </CardContent>
+      </Card>
     </div>
   )
 }

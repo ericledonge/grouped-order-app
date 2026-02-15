@@ -16,6 +16,7 @@ export function useCreateWish(orderId: string) {
     philibertReference: string,
     philibertUrl?: string,
     userId?: string,
+    onSuccess?: () => void,
   ) => {
     setValidationError(null)
 
@@ -30,6 +31,7 @@ export function useCreateWish(orderId: string) {
       {
         onSuccess: async () => {
           await queryClient.invalidateQueries({ queryKey: ['wishes'] })
+          onSuccess?.()
           await router.navigate({ to: '/orders/$orderId', params: { orderId } })
         },
       },
