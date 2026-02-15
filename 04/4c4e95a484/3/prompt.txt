@@ -1,0 +1,17 @@
+Tu peux mettre a jour Linear?
+
+---
+
+Super, qu'est-ce qui est testable a date dans l'
+
+---
+
+Est-ce qu'on a les tests e2e pour cela?
+
+---
+
+oui
+
+---
+
+Quand je roule les test avec test:e2e:ui, tout fail
