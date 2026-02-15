@@ -1,0 +1,1 @@
+Je ne suis pas fan de la page orders/id, avec les souhaits sous forme de cartes. Je préférais les souhaits sous forme de table. Peut-être aussi, en dessous du formulaire, ajouter un souhait.

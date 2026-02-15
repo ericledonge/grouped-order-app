@@ -3,12 +3,14 @@
   "checkpoint_id": "044c4e95a484",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 3,
+  "checkpoints_count": 4,
   "files_touched": [
     "frontend/e2e/specs/wishes.spec.ts",
     "frontend/src/components/layout/header.tsx",
+    "frontend/src/features/orders/use-cases/order-detail/order-detail-page.tsx",
     "frontend/src/features/users/domain/user.repository.ts",
     "frontend/src/features/wishes/use-cases/create-wish/create-wish-form-content.tsx",
+    "frontend/src/features/wishes/use-cases/create-wish/create-wish-form.tsx",
     "frontend/src/features/wishes/use-cases/create-wish/use-create-wish.use-case.ts"
   ],
   "sessions": [
@@ -25,13 +27,20 @@
       "context": "/04/4c4e95a484/1/context.md",
       "content_hash": "/04/4c4e95a484/1/content_hash.txt",
       "prompt": "/04/4c4e95a484/1/prompt.txt"
+    },
+    {
+      "metadata": "/04/4c4e95a484/2/metadata.json",
+      "transcript": "/04/4c4e95a484/2/full.jsonl",
+      "context": "/04/4c4e95a484/2/context.md",
+      "content_hash": "/04/4c4e95a484/2/content_hash.txt",
+      "prompt": "/04/4c4e95a484/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 61,
-    "cache_creation_tokens": 78918,
-    "cache_read_tokens": 2594680,
-    "output_tokens": 316,
-    "api_call_count": 47
+    "input_tokens": 86,
+    "cache_creation_tokens": 106919,
+    "cache_read_tokens": 3573427,
+    "output_tokens": 517,
+    "api_call_count": 68
   }
 }
