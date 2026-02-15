@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.4.4",
+  "checkpoint_id": "044c4e95a484",
+  "session_id": "8ed6c2f1-27a5-4714-af3b-911d8f6b847c",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-15T23:37:57.362979Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "frontend/e2e/specs/wishes.spec.ts",
+    "frontend/src/features/users/domain/user.repository.ts",
+    "frontend/src/features/wishes/use-cases/create-wish/create-wish-form-content.tsx",
+    "frontend/src/features/wishes/use-cases/create-wish/use-create-wish.use-case.ts"
+  ],
+  "agent": "Claude Code",
+  "token_usage": {
+    "input_tokens": 49,
+    "cache_creation_tokens": 56594,
+    "cache_read_tokens": 2273715,
+    "output_tokens": 251,
+    "api_call_count": 37
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-15T23:37:56.954505Z",
+    "agent_lines": 201,
+    "human_added": 402,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 603,
+    "agent_percentage": 33.33333333333333
+  },
+  "transcript_path": ".claude/projects/-Users-ericledonge-Perso-grouped-order-app/8ed6c2f1-27a5-4714-af3b-911d8f6b847c.jsonl"
+}
