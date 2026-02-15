@@ -1,3 +1,4 @@
+import { useNavigate } from '@tanstack/react-router'
 import { Badge } from '@/components/ui/badge'
 import {
   Table,
@@ -16,6 +17,8 @@ import { formatDate } from '@/lib/date.utils'
 import { STATUS_VARIANT } from './list-orders.helpers'
 
 export function OrderTable({ orders }: { orders: Order[] }) {
+  const navigate = useNavigate()
+
   return (
     <Table className="hidden md:table">
       <TableHeader>
@@ -29,7 +32,11 @@ export function OrderTable({ orders }: { orders: Order[] }) {
       </TableHeader>
       <TableBody>
         {orders.map((order) => (
-          <TableRow key={order.id}>
+          <TableRow
+            key={order.id}
+            className="cursor-pointer"
+            onClick={() => navigate({ to: '/orders/$orderId', params: { orderId: order.id } })}
+          >
             <TableCell>{ORDER_TYPE_LABELS[order.type]}</TableCell>
             <TableCell>{formatDate(order.targetDate)}</TableCell>
             <TableCell>

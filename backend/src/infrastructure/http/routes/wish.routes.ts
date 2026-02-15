@@ -35,8 +35,23 @@ export function createWishRoutes(useCases: WishUseCases) {
     }
 
     const user = c.get("user");
+
+    // Si userId fourni, vérifier que l'appelant est admin
+    let targetUserId = user.id;
+    if (parsed.data.userId) {
+      if (user.role !== "admin") {
+        return c.json(
+          {
+            error: "Seul un admin peut créer un souhait pour un autre membre",
+          },
+          403,
+        );
+      }
+      targetUserId = parsed.data.userId;
+    }
+
     try {
-      const wish = await useCases.createWish(parsed.data, user.id);
+      const wish = await useCases.createWish(parsed.data, targetUserId);
       return c.json(wish, 201);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Erreur interne";

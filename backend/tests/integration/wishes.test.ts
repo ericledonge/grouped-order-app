@@ -104,4 +104,44 @@ describe("Wishes API", () => {
     });
     expect(res.status).toBe(401);
   });
+
+  it("POST /api/wishes - un admin peut créer un souhait pour un autre membre", async () => {
+    // Récupérer l'id du membre
+    const usersRes = await testApp.app.request("/api/users", {
+      headers: authHeaders(adminCookie),
+    });
+    const users = await usersRes.json();
+    const member = users.find(
+      (u: { email: string }) => u.email === "member@test.com",
+    );
+
+    const res = await testApp.app.request("/api/wishes", {
+      method: "POST",
+      headers: authHeaders(adminCookie),
+      body: JSON.stringify({
+        orderId,
+        gameName: "Everdell",
+        philibertReference: "PHI-77777",
+        userId: member.id,
+      }),
+    });
+    expect(res.status).toBe(201);
+    const wish = await res.json();
+    expect(wish.gameName).toBe("Everdell");
+    expect(wish.userId).toBe(member.id);
+  });
+
+  it("POST /api/wishes - un membre ne peut pas créer un souhait pour un autre", async () => {
+    const res = await testApp.app.request("/api/wishes", {
+      method: "POST",
+      headers: authHeaders(memberCookie),
+      body: JSON.stringify({
+        orderId,
+        gameName: "Root",
+        philibertReference: "PHI-88888",
+        userId: "some-other-user-id",
+      }),
+    });
+    expect(res.status).toBe(403);
+  });
 });

@@ -1,16 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { ListMyWishesPage } from '@/features/wishes/use-cases/list-my-wishes/list-my-wishes-page'
 
 export const Route = createFileRoute('/_auth/wishes')({
-  component: WishesPage,
+  component: ListMyWishesPage,
 })
-
-function WishesPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold">Mes souhaits</h1>
-      <p className="text-muted-foreground mt-2">
-        Bientôt disponible.
-      </p>
-    </div>
-  )
-}

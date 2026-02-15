@@ -10,6 +10,13 @@ export function useOrders(status?: OrderStatus) {
   })
 }
 
+export function useOrder(id: string) {
+  return useQuery({
+    queryKey: ['orders', id],
+    queryFn: () => orderAdapter.fetchOrder(id),
+  })
+}
+
 export function useCreateOrderMutation() {
   return useMutation({
     mutationFn: (payload: CreateOrderPayload) => orderAdapter.createOrder(payload),

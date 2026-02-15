@@ -16,6 +16,11 @@ export const orderAdapter = {
     return z.array(orderSchema).parse(data)
   },
 
+  fetchOrder: async (id: string): Promise<Order> => {
+    const data = await apiFetch<unknown>(`/api/orders/${id}`)
+    return orderSchema.parse(data)
+  },
+
   createOrder: async (payload: CreateOrderPayload): Promise<Order> => {
     const data = await apiFetch<unknown>('/api/orders', {
       method: 'POST',

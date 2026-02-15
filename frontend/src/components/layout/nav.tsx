@@ -6,7 +6,7 @@ interface NavProps {
 }
 
 export function Nav({ onLinkClick }: NavProps) {
-  const { isAuthenticated, isAdmin } = useAuthSession()
+  const { isAuthenticated } = useAuthSession()
 
   const linkClass =
     'text-sm font-medium transition-colors hover:text-primary text-muted-foreground'
@@ -35,9 +35,9 @@ export function Nav({ onLinkClick }: NavProps) {
         </Link>
       )}
 
-      {isAdmin && (
+      {isAuthenticated && (
         <Link
-          to="/admin/orders"
+          to="/orders"
           onClick={onLinkClick}
           className={linkClass}
           activeProps={{ className: activeLinkClass }}

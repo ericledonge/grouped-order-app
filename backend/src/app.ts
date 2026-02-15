@@ -8,6 +8,7 @@ import type { Database } from "./infrastructure/db/index.js";
 import { createDrizzleOrderRepository } from "./infrastructure/repositories/drizzle-order.repository.js";
 import { createDrizzleWishRepository } from "./infrastructure/repositories/drizzle-wish.repository.js";
 import { createDrizzleBasketRepository } from "./infrastructure/repositories/drizzle-basket.repository.js";
+import { createDrizzleUserRepository } from "./infrastructure/repositories/drizzle-user.repository.js";
 
 // Use Cases
 import { createOrderUseCase } from "./application/use-cases/order/create-order.use-case.js";
@@ -19,11 +20,13 @@ import { listOrderWishesUseCase } from "./application/use-cases/wish/list-order-
 import { createBasketUseCase } from "./application/use-cases/basket/create-basket.use-case.js";
 import { listOrderBasketsUseCase } from "./application/use-cases/basket/list-order-baskets.use-case.js";
 import { getBasketUseCase } from "./application/use-cases/basket/get-basket.use-case.js";
+import { listUsersUseCase } from "./application/use-cases/user/list-users.use-case.js";
 
 // Routes
 import { createOrderRoutes } from "./infrastructure/http/routes/order.routes.js";
 import { createWishRoutes } from "./infrastructure/http/routes/wish.routes.js";
 import { createBasketRoutes } from "./infrastructure/http/routes/basket.routes.js";
+import { createUserRoutes } from "./infrastructure/http/routes/user.routes.js";
 
 export interface AppDependencies {
   db: Database;
@@ -39,6 +42,7 @@ export function createApp(deps: AppDependencies) {
   const orderRepo = createDrizzleOrderRepository(db);
   const wishRepo = createDrizzleWishRepository(db);
   const basketRepo = createDrizzleBasketRepository(db);
+  const userRepo = createDrizzleUserRepository(db);
 
   // 2. Use Cases
   const orderUseCases = {
@@ -51,6 +55,10 @@ export function createApp(deps: AppDependencies) {
     createWish: createWishUseCase(wishRepo, orderRepo),
     listUserWishes: listUserWishesUseCase(wishRepo),
     listOrderWishes: listOrderWishesUseCase(wishRepo),
+  };
+
+  const userUseCases = {
+    listUsers: listUsersUseCase(userRepo),
   };
 
   const basketUseCases = {
@@ -75,6 +83,7 @@ export function createApp(deps: AppDependencies) {
   app.route("/api/auth", authRouteHandler);
   app.route("/api/orders", createOrderRoutes(orderUseCases));
   app.route("/api/wishes", createWishRoutes(wishUseCases));
+  app.route("/api/users", createUserRoutes(userUseCases));
   app.route("/api/baskets", createBasketRoutes(basketUseCases));
 
   app.get("/", (c) => {
